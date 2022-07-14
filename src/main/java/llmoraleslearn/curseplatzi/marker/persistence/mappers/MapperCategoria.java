@@ -10,11 +10,9 @@ import org.mapstruct.Mappings;
 @Mapper(componentModel = "spring")
 public interface MapperCategoria {
 
-    @Mappings({
-            @Mapping(source = "idCategory", target = "categoriasId"),
-            @Mapping(source = "description", target = "categoria"),
-            @Mapping(source = "state", target = "activo")
-    })
+    @Mapping(source = "idCategory", target = "categoriasId")
+    @Mapping(source = "description", target = "categoria")
+    @Mapping(source = "state", target = "activo")
     Categoria toCategoria(Category category);
 
     @InheritInverseConfiguration

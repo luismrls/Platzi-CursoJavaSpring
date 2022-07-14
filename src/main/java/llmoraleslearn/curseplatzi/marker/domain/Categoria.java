@@ -6,7 +6,7 @@ public class Categoria {
     private String categoria;
     private boolean activo;
 
-    public int categoriasId() {
+    public int getCategoriasId() {
         return categoriasId;
     }
 
@@ -14,7 +14,7 @@ public class Categoria {
         this.categoriasId = categoriasId;
     }
 
-    public String categoria() {
+    public String getCategoria() {
         return categoria;
     }
 
@@ -22,11 +22,12 @@ public class Categoria {
         this.categoria = categoria;
     }
 
-    public boolean activo() {
+    public boolean getActivo() {
         return activo;
     }
 
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
+
 }

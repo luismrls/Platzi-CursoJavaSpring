@@ -15,7 +15,7 @@ public class Product {
     private String name;
 
     @Column(name = "id_categoria")
-    private Integer IdCategory;
+    private Integer idCategory;
 
     @Column(name = "codigo_barras")
     private String barCode;
@@ -33,15 +33,15 @@ public class Product {
     @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
     private Category category;
 
-    public Integer idProducto() {
+    public Integer getIdProduct() {
         return idProduct;
     }
 
-    public void setIdProducto(Integer idProducto) {
-        this.idProduct = idProducto;
+    public void setIdProduct(Integer idProduct) {
+        this.idProduct = idProduct;
     }
 
-    public String name() {
+    public String getName() {
         return name;
     }
 
@@ -49,15 +49,15 @@ public class Product {
         this.name = name;
     }
 
-    public Integer IdCategory() {
-        return IdCategory;
+    public Integer getIdCategory() {
+        return idCategory;
     }
 
     public void setIdCategory(Integer idCategory) {
-        IdCategory = idCategory;
+        this.idCategory = idCategory;
     }
 
-    public String barCode() {
+    public String getBarCode() {
         return barCode;
     }
 
@@ -65,7 +65,7 @@ public class Product {
         this.barCode = barCode;
     }
 
-    public Double salePrice() {
+    public Double getSalePrice() {
         return salePrice;
     }
 
@@ -73,7 +73,7 @@ public class Product {
         this.salePrice = salePrice;
     }
 
-    public Integer quantityStock() {
+    public Integer getQuantityStock() {
         return quantityStock;
     }
 
@@ -81,11 +81,19 @@ public class Product {
         this.quantityStock = quantityStock;
     }
 
-    public Boolean state() {
+    public Boolean getState() {
         return state;
     }
 
     public void setState(Boolean state) {
         this.state = state;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }

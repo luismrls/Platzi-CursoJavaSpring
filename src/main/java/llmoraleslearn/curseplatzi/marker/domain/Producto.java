@@ -10,7 +10,7 @@ public class Producto {
     private boolean activo;
     private Categoria categoria;
 
-    public int productoId() {
+    public int getProductoId() {
         return productoId;
     }
 
@@ -18,7 +18,7 @@ public class Producto {
         this.productoId = productoId;
     }
 
-    public String nombre() {
+    public String getNombre() {
         return nombre;
     }
 
@@ -26,7 +26,7 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public int categoriaId() {
+    public int getCategoriaId() {
         return categoriaId;
     }
 
@@ -34,7 +34,7 @@ public class Producto {
         this.categoriaId = categoriaId;
     }
 
-    public double precio() {
+    public double getPrecio() {
         return precio;
     }
 
@@ -42,7 +42,7 @@ public class Producto {
         this.precio = precio;
     }
 
-    public int stock() {
+    public int getStock() {
         return stock;
     }
 
@@ -50,7 +50,7 @@ public class Producto {
         this.stock = stock;
     }
 
-    public boolean activo() {
+    public boolean isActivo() {
         return activo;
     }
 
@@ -58,7 +58,7 @@ public class Producto {
         this.activo = activo;
     }
 
-    public Categoria categoria() {
+    public Categoria getCategoria() {
         return categoria;
     }
 

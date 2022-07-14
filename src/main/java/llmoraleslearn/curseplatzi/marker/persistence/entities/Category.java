@@ -21,7 +21,7 @@ public class Category {
     @OneToMany(mappedBy = "category")
     private List<Product> productList;
 
-    public Integer idCategory() {
+    public Integer getIdCategory() {
         return idCategory;
     }
 
@@ -29,7 +29,7 @@ public class Category {
         this.idCategory = idCategory;
     }
 
-    public String description() {
+    public String getDescription() {
         return description;
     }
 
@@ -37,11 +37,19 @@ public class Category {
         this.description = description;
     }
 
-    public Boolean state() {
+    public Boolean getState() {
         return state;
     }
 
     public void setState(Boolean state) {
         this.state = state;
+    }
+
+    public List<Product> productList() {
+        return productList;
+    }
+
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
     }
 }
