@@ -1,9 +1,6 @@
 package llmoraleslearn.curseplatzi.marker.persistence.entities;
 
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "compras_productos")
@@ -19,6 +16,14 @@ public class ShoppingProduct {
 
     @Column(name = "estado")
     private Integer state;
+
+    @ManyToOne
+    @JoinColumn(name = "id_compra", insertable = false, updatable = false)
+    private Purchase purchase;
+
+    @ManyToOne
+    @JoinColumn(name = "id_producto", insertable = false, updatable = false)
+    private Product product;
 
     public ShoppingProductPK id() {
         return id;

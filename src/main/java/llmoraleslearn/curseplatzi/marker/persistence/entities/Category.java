@@ -1,6 +1,7 @@
 package llmoraleslearn.curseplatzi.marker.persistence.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "categorias")
@@ -16,6 +17,9 @@ public class Category {
 
     @Column(name = "estado")
     private Boolean state;
+
+    @OneToMany(mappedBy = "category")
+    private List<Product> productList;
 
     public Integer idCategory() {
         return idCategory;

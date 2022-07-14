@@ -2,6 +2,7 @@ package llmoraleslearn.curseplatzi.marker.persistence.entities;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "compras")
@@ -26,6 +27,13 @@ public class Purchase {
 
     @Column(name = "estado")
     private String state;
+
+    @ManyToOne
+    @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
+    private Client client;
+
+    @OneToMany(mappedBy = "product")
+    private List<ShoppingProduct> products;
 
     public Integer idPurchase() {
         return idPurchase;
