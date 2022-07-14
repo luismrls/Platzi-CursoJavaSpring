@@ -2,8 +2,7 @@ package llmoraleslearn.curseplatzi.marker.web.controllers;
 
 import llmoraleslearn.curseplatzi.marker.domain.Producto;
 import llmoraleslearn.curseplatzi.marker.domain.services.ProductService;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,23 +17,28 @@ public class ProductController {
         this.productService = productService;
     }
 
+    @GetMapping
     public List<Producto> getAll() {
         return productService.getAll();
     }
 
-    public Optional<Producto> getProduct(int productoId) {
+    @GetMapping("/{id}")
+    public Optional<Producto> getProduct(@PathVariable("id") int productoId) {
         return productService.getProducto(productoId);
     }
 
-    public Optional<List<Producto>> getByCategoria(int categoriaId) {
+    @GetMapping("/category/{categoriaId}")
+    public Optional<List<Producto>> getByCategoria(@PathVariable int categoriaId) {
         return productService.getByCategoria(categoriaId);
     }
 
-    public Producto save(Producto producto){
+    @PostMapping
+    public Producto save(@RequestBody Producto producto){
         return productService.save(producto);
     }
 
-    public boolean delete(int prodcutoId) {
-        return productService.delete(prodcutoId);
+    @DeleteMapping("/{id}")
+    public boolean delete(@PathVariable int id) {
+        return productService.delete(id);
     }
 }

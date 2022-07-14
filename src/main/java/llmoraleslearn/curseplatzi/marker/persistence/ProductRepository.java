@@ -16,6 +16,11 @@ public class ProductRepository implements ProductoRepository {
     private ProductCrudRepository productCrudRepository;
     private MapperProducto mapperProducto;
 
+    public ProductRepository(ProductCrudRepository productCrudRepository, MapperProducto mapperProducto) {
+        this.productCrudRepository = productCrudRepository;
+        this.mapperProducto = mapperProducto;
+    }
+
     @Override
     public List<Producto> getAll() {
         List<Product> productList = (List<Product>) productCrudRepository.findAll();
