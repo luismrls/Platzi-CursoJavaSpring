@@ -35,7 +35,7 @@ public class Purchase {
     @OneToMany(mappedBy = "product")
     private List<ShoppingProduct> products;
 
-    public Integer idPurchase() {
+    public Integer getIdPurchase() {
         return idPurchase;
     }
 
@@ -43,7 +43,7 @@ public class Purchase {
         this.idPurchase = idPurchase;
     }
 
-    public String idClient() {
+    public String getIdClient() {
         return idClient;
     }
 
@@ -51,7 +51,7 @@ public class Purchase {
         this.idClient = idClient;
     }
 
-    public LocalDateTime date() {
+    public LocalDateTime getDate() {
         return date;
     }
 
@@ -59,7 +59,7 @@ public class Purchase {
         this.date = date;
     }
 
-    public String paymentMethod() {
+    public String getPaymentMethod() {
         return paymentMethod;
     }
 
@@ -67,7 +67,7 @@ public class Purchase {
         this.paymentMethod = paymentMethod;
     }
 
-    public String comment() {
+    public String getComment() {
         return comment;
     }
 
@@ -75,11 +75,27 @@ public class Purchase {
         this.comment = comment;
     }
 
-    public String state() {
+    public String getState() {
         return state;
     }
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public List<ShoppingProduct> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<ShoppingProduct> products) {
+        this.products = products;
     }
 }

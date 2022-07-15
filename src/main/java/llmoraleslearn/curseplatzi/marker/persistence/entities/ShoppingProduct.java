@@ -25,7 +25,7 @@ public class ShoppingProduct {
     @JoinColumn(name = "id_producto", insertable = false, updatable = false)
     private Product product;
 
-    public ShoppingProductPK id() {
+    public ShoppingProductPK getId() {
         return id;
     }
 
@@ -33,7 +33,7 @@ public class ShoppingProduct {
         this.id = id;
     }
 
-    public Integer quantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
@@ -41,7 +41,7 @@ public class ShoppingProduct {
         this.quantity = quantity;
     }
 
-    public Double total() {
+    public Double getTotal() {
         return total;
     }
 
@@ -49,11 +49,27 @@ public class ShoppingProduct {
         this.total = total;
     }
 
-    public Integer state() {
+    public Integer getState() {
         return state;
     }
 
     public void setState(Integer state) {
         this.state = state;
+    }
+
+    public Purchase getPurchase() {
+        return purchase;
+    }
+
+    public void setPurchase(Purchase purchase) {
+        this.purchase = purchase;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 }
