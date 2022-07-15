@@ -15,9 +15,10 @@ public class ShoppingProduct {
     private Double total;
 
     @Column(name = "estado")
-    private Integer state;
+    private Boolean state;
 
     @ManyToOne
+    @MapsId("idPurchase")
     @JoinColumn(name = "id_compra", insertable = false, updatable = false)
     private Purchase purchase;
 

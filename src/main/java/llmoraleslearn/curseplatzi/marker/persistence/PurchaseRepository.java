@@ -27,12 +27,15 @@ public class PurchaseRepository implements ComprasRepository {
     }
 
     @Override
-    public Optional<List<Compra>> getByClient() {
-        return Optional.empty();
+    public Optional<List<Compra>> getByClient(String idClient) {
+        return purchaseCrudRepository.findByIdClient(idClient)
+                .map(purchaseList -> mapperCompra.toCompras(purchaseList));
     }
 
     @Override
     public Compra save(Compra compra) {
-        return null;
+        Purchase newPurchase = mapperCompra.toPurchase(compra);
+        newPurchase.getProducts().forEach(shoppingProduct -> shoppingProduct.setPurchase(newPurchase));
+        return mapperCompra.toCompra(purchaseCrudRepository.save(newPurchase));
     }
 }
