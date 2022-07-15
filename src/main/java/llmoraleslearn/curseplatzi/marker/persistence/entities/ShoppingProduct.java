@@ -50,11 +50,11 @@ public class ShoppingProduct {
         this.total = total;
     }
 
-    public Integer getState() {
+    public Boolean getState() {
         return state;
     }
 
-    public void setState(Integer state) {
+    public void setState(Boolean state) {
         this.state = state;
     }
 
