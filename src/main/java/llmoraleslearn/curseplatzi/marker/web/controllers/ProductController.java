@@ -1,5 +1,9 @@
 package llmoraleslearn.curseplatzi.marker.web.controllers;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import llmoraleslearn.curseplatzi.marker.domain.Producto;
 import llmoraleslearn.curseplatzi.marker.domain.services.ProductService;
 import org.springframework.http.HttpStatus;
@@ -20,12 +24,19 @@ public class ProductController {
     }
 
     @GetMapping
+    @ApiOperation("Get all supermarket products")
+    @ApiResponse(code = 200, message = "OK")
     public ResponseEntity<List<Producto>> getAll() {
         return new ResponseEntity<>(productService.getAll(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Producto> getProduct(@PathVariable("id") int productoId) {
+    @ApiOperation("Search a product with an ID")
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "OK"),
+            @ApiResponse(code = 404, message = "Product not found"),
+    })
+    public ResponseEntity<Producto> getProduct(@ApiParam(value = "The id of the product", required = true, example = "7") @PathVariable("id") int productoId) {
         return productService.getProducto(productoId)
                 .map(producto -> new ResponseEntity<>(producto, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
